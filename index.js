@@ -1,6 +1,6 @@
 const express = require("express")
 const app = express()
-
+app.use(require('cors')())
 const connection = require('./config/db.config')
 connection.once('open', () => console.log('DB Connected'))
 connection.on('error', () => console.log('Error'))
